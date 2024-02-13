@@ -73,28 +73,33 @@ body {
     font-weight: 600;
 }
 
-
 .loader {
-  position: fixed;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  border-width: 3px 2px 3px 2px;
+  border-style: solid dotted solid dotted;
+  border-color: #121010 rgba(8, 8, 8, 0.67) #220bf0 #1607e5e1;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: 1s rotate linear infinite;
 }
-
 .loader:before , .loader:after{
   content: '';
-  border-radius: 50%;
+  top: 0;
+  left: 0;
   position: absolute;
-  inset: 0;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+  border: 10px solid transparent;
+  border-bottom-color:#070bf5;
+  transform: translate(-10px, 19px) rotate(-35deg);
 }
 .loader:after {
-  box-shadow: 0 2px 0 #FF3D00 inset;
-  animation: rotate 2s linear infinite;
+  border-color: #0e0d0d #0000 #0000 #0000 ;
+  transform: translate(32px, 3px) rotate(-35deg);
 }
-
-@keyframes rotate {
-  0% {  transform: rotate(0)}
-  100% { transform: rotate(360deg)}
+ @keyframes rotate {
+  100%{    transform: rotate(360deg)}
 }
 
 .error {
